@@ -9,6 +9,14 @@ const rootReducer = combineReducers({
   users: usersReducer,
 });
 
+// function rootReducer(state, action) {
+  //    return {
+  //     ...state,
+  //     todos: todosReducer,
+  // users: usersReducer,
+  //   }
+//}
+
 export function configureStore() {
   const store = createStore(rootReducer, composeWithDevTools());
 
