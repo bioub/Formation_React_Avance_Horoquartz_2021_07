@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Select.module.scss';
 import SelectItem from '../SelectItem/SelectItem';
 
-console.log(styles);
-
 function Select({ selected = '', items = [], onSelected }) {
   const hostRef = useRef();
   useEffect(() => {
