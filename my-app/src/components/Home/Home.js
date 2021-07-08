@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { concatComponents } from '../../hoc/concatComponents';
 import Select from '../Select/Select';
 import Clock from '../Clock/Clock';
+import List from '../List/List';
 import { hideable } from '../../hoc/hideable';
 
 // class Home extends Component {
@@ -34,6 +35,7 @@ function Home() {
     <div>
         <HideableClock />
       <DoubleClock />
+      <List items={prenoms} renderItem={(item) => <button>{item}</button>} />
       <p>Vous avez sélectionné : {selectedPrenom}</p>
       <Select
         items={prenoms}
