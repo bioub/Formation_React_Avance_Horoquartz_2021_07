@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Select.module.scss';
 import SelectItem from '../SelectItem/SelectItem';
 
-function Select({ selected = '', items = [], onSelected }) {
+function Select({ selected = '', items = [], onSelected, renderItem }) {
   const hostRef = useRef();
   useEffect(() => {
     function callback(event) {
@@ -28,6 +28,7 @@ function Select({ selected = '', items = [], onSelected }) {
             item={it}
             key={it}
             onSelected={onSelected}
+            renderItem={renderItem}
           />
         ))}
       </div>

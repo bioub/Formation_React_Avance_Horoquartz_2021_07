@@ -6,13 +6,16 @@ import { Provider } from 'react-redux';
 
 import App from './components/App/App';
 import { configureStore } from './configureStore';
+import { PrenomProvider } from './context/PrenomContext';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={configureStore()}>
-      <App />
-    </Provider>
+    <PrenomProvider>
+      <Provider store={configureStore()}>
+        <App />
+      </Provider>
+    </PrenomProvider>
   </StrictMode>,
   document.getElementById('root'),
 );

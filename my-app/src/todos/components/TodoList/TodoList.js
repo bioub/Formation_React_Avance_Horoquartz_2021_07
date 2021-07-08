@@ -10,14 +10,14 @@ export default class TodoList extends PureComponent {
   render() {
     const { count, items, onDeleteItem } = this.props;
     return (
-      <div>
+      <>
         <div className="TodoList">
           {items.map((it) => (
             <TodoItem key={it.id} item={it} onDeleteItem={onDeleteItem} />
           ))}
         </div>
         <TodoCount count={count} />
-      </div>
+      </>
     );
   }
 }
