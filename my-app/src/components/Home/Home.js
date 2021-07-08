@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import { concatComponents } from '../../hoc/concatComponents';
 import Select from '../Select/Select';
+import Clock from '../Clock/Clock';
+import { hideable } from '../../hoc/hideable';
 
 // class Home extends Component {
 //   state = {
@@ -21,11 +24,16 @@ import Select from '../Select/Select';
 //   }
 // }
 
+const DoubleClock = concatComponents(Clock, Clock);
+const HideableClock = hideable(Clock);
+
 function Home() {
   const [prenoms] = useState(['Jean', 'Paul', 'Eric']); // 0
   const [selectedPrenom, setSelectedPrenom] = useState('Jean'); // 1
   return (
     <div>
+        <HideableClock />
+      <DoubleClock />
       <p>Vous avez sélectionné : {selectedPrenom}</p>
       <Select
         items={prenoms}
