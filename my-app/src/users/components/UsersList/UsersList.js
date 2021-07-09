@@ -5,15 +5,15 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { userFetch, userFetchSuccess } from '../../actions';
-import { getAll } from '../../api/users';
+import {  userFetchRequest } from '../../actions';
 
 export default class UsersList extends Component {
-  async componentDidMount() {
+  componentDidMount() {
     // redux-thunk / redux-saga / redux-promise / redux-observable
-    this.props.dispatch(userFetch());
-    const users = await getAll();
-    this.props.dispatch(userFetchSuccess(users));
+    // this.props.dispatch(userFetch());
+    // const users = await getAll();
+    // this.props.dispatch(userFetchSuccess(users));
+    this.props.dispatch(userFetchRequest());
   }
   render() {
     const { match, users = [], loading } = this.props;
