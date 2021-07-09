@@ -2,7 +2,7 @@
  * @param {number[]} nbs
  * @returns {string}
  */
-export function dejaSaisis(nbs) {
+module.exports = function dejaSaisis(nbs) {
   if (!nbs.length) {
     return;
   }

@@ -2,7 +2,7 @@
  * @param {string} value 
  * @returns {number}
  */
-export function convertToNumber(value) {
+module.exports = function convertToNumber(value) {
   const nb = parseInt(value, 10);
 
   if (isNaN(nb)) {

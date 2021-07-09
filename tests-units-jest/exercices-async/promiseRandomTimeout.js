@@ -1,4 +1,4 @@
-export function promiseRandomTimeout(value) {
+module.exports = function promiseRandomTimeout(value) {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(value);

@@ -2,6 +2,6 @@
  * @param {string} key 
  * @returns {string}
  */
-export function localStorageToUpper(key) {
+module.exports = function localStorageToUpper(key) {
   return localStorage.getItem(key).toUpperCase();
 }
