@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
 
 import styles from './Select.module.scss';
-import SelectItem from '../SelectItem/SelectItem';
+import SelectListItem from '../SelectListItem/SelectListItem';
 
 function Select({ selected = '', items = [], onSelected, renderItem }) {
   const hostRef = useRef();
@@ -18,19 +18,19 @@ function Select({ selected = '', items = [], onSelected, renderItem }) {
       document.removeEventListener('click', callback);
     };
   }, []);
+
+  const onSelectedRef = useRef();
+
+  useEffect(() => {
+    onSelectedRef.current = onSelected;
+  }, [])
+
   const [open, setOpen] = useState(false);
   return (
     <div ref={hostRef} className={styles.host} onClick={(event) => setOpen(!open)}>
       <div className={styles.selected}>{selected}</div>
       <div className={classnames(styles.items, { [styles.close]: !open })}>
-        {items.map((it) => (
-          <SelectItem
-            item={it}
-            key={it}
-            onSelected={onSelected}
-            renderItem={renderItem}
-          />
-        ))}
+        <SelectListItem items={items} onSelected={onSelected}  />
       </div>
     </div>
   );
