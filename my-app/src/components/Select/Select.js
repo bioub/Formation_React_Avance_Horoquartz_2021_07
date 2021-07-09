@@ -19,18 +19,13 @@ function Select({ selected = '', items = [], onSelected, renderItem }) {
     };
   }, []);
 
-  const onSelectedRef = useRef();
-
-  useEffect(() => {
-    onSelectedRef.current = onSelected;
-  }, [])
 
   const [open, setOpen] = useState(false);
   return (
     <div ref={hostRef} className={styles.host} onClick={(event) => setOpen(!open)}>
       <div className={styles.selected}>{selected}</div>
       <div className={classnames(styles.items, { [styles.close]: !open })}>
-        <SelectListItem items={items} onSelected={onSelected}  />
+        <SelectListItem items={items} onSelected={onSelected} renderItem={renderItem}  />
       </div>
     </div>
   );

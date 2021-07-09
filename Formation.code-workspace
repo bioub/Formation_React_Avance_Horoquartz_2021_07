@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "hello-redux"
+		},
+		{
+			"path": "tests-units-jest"
 		}
 	],
 	"settings": {}
