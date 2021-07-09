@@ -5,8 +5,10 @@
     "@material-ui/core": "^4.11.1",
     "@material-ui/icons": "^4.9.1",
     "@reduxjs/toolkit": "^1.6.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
     "axios": "^0.20.0",
     "classnames": "^2.3.1",
+    "enzyme": "^3.11.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "react": "^17.0.0",
@@ -17,6 +19,8 @@
     "xlsx": "^0.17.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "cypress": "^7.7.0",
     "import-sort": "^6.0.0",
     "import-sort-cli": "^6.0.0",
     "import-sort-style-module": "^6.0.0",
@@ -29,7 +33,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "prettier": "prettier 'src/**/*' --write",
-    "import-sort": "import-sort 'src/**/*.js' --write"
+    "import-sort": "import-sort 'src/**/*.js' --write",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"

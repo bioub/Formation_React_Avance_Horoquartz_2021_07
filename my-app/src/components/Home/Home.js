@@ -6,7 +6,7 @@ import List from '../List/List';
 import { hideable } from '../../hoc/hideable';
 import { PrenomContext } from '../../context/PrenomContext';
 
-import { memoize } from 'lodash-es'
+// import { memoize } from 'lodash-es'
 
 // class Home extends Component {
 //   state = {
@@ -32,7 +32,7 @@ const DoubleClock = concatComponents(Clock, Clock);
 const HideableClock = hideable(Clock);
 
 function Home() {
-  memoize(() => {});
+  // memoize(() => {});
   const [prenoms] = useState(['Jean', 'Paul', 'Eric']); // 0
 //   const [selectedPrenom, setSelectedPrenom] = useState('Jean'); // 1
   const {prenom, setPrenom} = useContext(PrenomContext);
